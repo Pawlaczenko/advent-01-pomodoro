@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 import Button from '../Button/index';
 import Pin from '../Pin/index';
 import Time from '../Time/index';
@@ -12,11 +12,14 @@ const Timer = () => {
     const handleClockChange = (value) => {
         let copy = Object.assign({}, inputValues);
         copy[value.name] = value.value;
-        changeInputValues(value);
+        changeInputValues(copy);
     }
 
     const handleSubmit = () => {
         let copy = Object.assign({}, inputValues);
+
+        copy["minutes"] = copy["minutes"].padStart(2, "0");
+        copy["seconds"] = copy["seconds"].padStart(2, "0");
 
         changeInputValues(copy);
         changeEditable(false)

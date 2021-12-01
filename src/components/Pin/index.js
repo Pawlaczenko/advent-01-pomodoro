@@ -6,7 +6,7 @@ import check from '../../assets/images/check.svg';
 const Pin = ({ handleClick, type }) => {
     return (
         <button onClick={handleClick} className={styles.pin}>
-            <img src={(type == "gear") ? gear : check} alt="Settings" />
+            <img src={(type === "gear") ? gear : check} alt="Settings" />
         </button>
     )
 }
