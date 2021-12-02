@@ -1,10 +1,10 @@
 import React from 'react'
 import styles from './_button.module.scss';
 
-const Button = (props) => {
+const Button = ({ handleOnClick, value }) => {
     return (
-        <button className={styles.button}>
-            {props.children}
+        <button onClick={handleOnClick} className={styles.button}>
+            {value}
         </button>
     )
 }

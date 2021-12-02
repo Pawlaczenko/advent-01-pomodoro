@@ -4,7 +4,7 @@ import styles from './_clockValue.module.scss';
 const ClockValue = ({ time, name, isEditable, handleClockChange }) => {
     return (
         <div className={styles.ClockValue}>
-            <input name={name} className={styles.input} type="text" value={time[name]} onChange={e => handleClockChange(e.target)} disabled={!isEditable} maxLength="2" />
+            <input maxLength="2" name={name} className={styles.input} type="text" value={time} onChange={e => handleClockChange(e.target)} disabled={!isEditable} />
         </div>
     )
 }
